@@ -1,0 +1,803 @@
+
+
+*,
+*::after,
+*::before{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration:none !important;
+    list-style:none;
+    outline: none;
+    // user-select: none;
+}
+
+
+html{
+    font-size:10px;
+    height: 100%;
+    width: 100%;
+
+    & body {
+        height: 100%;
+        width: 100%;
+        font-family: 'Times New Roman', sans-serif; // 'Poppins', 'Lato', sans-serif;
+        font-weight:400;
+        line-height:1.7;
+        color:#777;
+        position:relative;
+        // background: $body;
+
+        &.grille{
+            // background-image: linear-gradient(rgba(68, 66, 191, 0.1), rgba(191, 70, 66, 0.1)), url(../image/background-opacity-2.png) ;
+        }
+
+        & main{
+            position: relative;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+
+            &.fixed{
+                position: fixed !important;
+                overflow: hidden !important;
+            }
+        }
+    }
+}
+
+
+
+
+
+input,
+textarea,
+select,
+button{
+    font-family: "Lato", sans-serif;
+}
+
+a,
+a:link,
+a:visited,
+a:active{
+    color:#777;
+    font-size:1.6rem;
+}
+
+.menu-box-header{
+    height:5.7rem;
+}
+
+::after,
+::before{
+    font-family: FontAwesome;
+}
+
+
+.popup-personal{
+    overflow: auto;
+    position:absolute;
+    width: 22rem;
+    max-height:40rem;
+    background:#fff;
+    box-shadow:0 0 2rem 0 rgba(0, 0, 0, 0.1);
+    border-radius: 1rem;
+    z-index: -1;
+    visibility: hidden;
+    transform: translateY(3rem);
+    transition-duration: .2s;
+    transition-property:transform visibility;
+    transition-timing-function: ease-in;
+}
+
+
+
+//--flex container section--
+.flex-container{
+
+    display: flex;
+
+    &.--row{
+        flex-direction: row;
+    }
+
+    &.--row-reverse{
+        flex-direction: row-reverse;
+    }
+
+    &.--column{
+        flex-direction: column;
+    }
+
+    &.--column-reverse{
+        flex-direction: column-reverse;
+    }
+
+
+    //alignement en ligne
+    // alignement en colonne
+    &.--column-reverse,
+    &.--column,
+    &.--row-reverse,
+    &.--row{
+
+        &.--align-center{
+            align-items: center;
+        }
+
+        &.--align-stretch{
+            align-items:stretch;
+        }
+
+        &.--align-start{
+            align-items: flex-start;
+        }
+
+        &.--align-end{
+            align-items: flex-end;
+        }
+
+
+        &.--justify-start{
+            justify-content: flex-start;
+        }
+
+        &.--justify-end{
+            justify-content: flex-end;
+        }
+
+        &.--justify-center{
+            justify-content:center;
+        }
+
+        &.--justify-around{
+            justify-content:space-around;
+        }
+
+        &.--justify-evenly{
+            justify-content:space-evenly;
+        }
+
+        &.--justify-between{
+            justify-content:space-between;
+        }
+
+        &.--justify-normal{
+            justify-content:normal;
+        }
+
+
+
+        &.--content-center{
+            align-content: center;
+        }
+
+        &.--content-start{
+            align-content: flex-start;
+        }
+
+        &.--content-end{
+            align-content: flex-end;
+        }
+
+        &.--content-stretch{
+            align-content: stretch;
+        }
+
+        &.--content-normal{
+            align-content: normal;
+        }
+
+        &.--wrap{
+            flex-wrap: wrap;
+        }
+
+        &.--nowrap{
+            flex-wrap: nowrap;
+        }
+    }
+
+
+    /*--------- redimensionnement des colonnes -------------*/
+    //colonne de 10 %
+    & > .flex-col-5{
+        flex:5%
+    }
+
+    //colonne de 10 %
+    & > .flex-col-10{
+        flex:10%
+    }
+
+    //colonne de 15 %
+    & > .flex-col-15{
+        flex:15%
+    }
+
+    //colonne de 20 %
+    & > .flex-col-20{
+        flex:20%
+    }
+    //colonne de 25 %
+    & > .flex-col-25{
+        flex:25%
+    }
+    //colonne de 30 %
+    & > .flex-col-30{
+        flex:30%
+    }
+    //colonne de 40 %
+    & > .flex-col-40{
+        flex:40%
+    }
+    //colonne de 50 %
+    & > .flex-col-50{
+        flex:50%
+    }
+    //colonne de 60 %
+    & > .flex-col-60{
+        flex:60%
+    }
+    //colonne de 70 %
+    & > .flex-col-70{
+        flex:70%
+    }
+     //colonne de 75 %
+     & > .flex-col-75{
+        flex:75%
+    }
+    //colonne de 80 %
+    & > .flex-col-80{
+        flex:80%
+    }
+    //colonne de 90 %
+    & > .flex-col-90{
+        flex:90%
+    }
+     //colonne de 95 %
+     & > .flex-col-95{
+        flex:95%
+    }
+    //colonne de 100 %
+    & > .flex-col-100{
+        flex:100%
+    }
+
+    & > .self-center{
+        align-self: center;
+    }
+
+
+
+
+    // la marge interne de 5px en haut, en bas, en gauche, droite
+    & .pd-5{
+        padding: .5rem;
+    }
+
+    // la marge interne de 10px en haut, en bas, en gauche, droite
+    & .pd-10{
+        padding: 1rem;
+    }
+
+    // la marge interne de 15px en haut, en bas, en gauche, droite
+    & .pd-15{
+        padding: 1.5rem;
+    }
+
+    // la marge interne de 20px en haut, en bas, en gauche, droite
+    & .pd-20{
+        padding:2rem;
+    }
+
+
+    // la marge interne de 25px en haut, en bas, en gauche, droite
+    & .pd-25{
+        padding:2.5rem;
+    }
+
+     // la marge interne de 25px en haut, en bas, en gauche, droite
+     & .pd-30{
+        padding:3rem;
+    }
+
+
+     // la marge interne de 10px en haut et en bas
+     & .pd-y-5{
+        padding: {
+            top:.5rem;
+            bottom: .5rem;
+        }
+    }
+
+
+    // la marge interne de 10px en haut et en bas
+    & .pd-y-10{
+        padding: {
+            top:1rem;
+            bottom: 1rem;
+        }
+    }
+
+    // la marge interne de 15px en haut et en bas
+    & .pd-y-15{
+        padding: {
+            top:1.5rem;
+            bottom: 1.5rem;
+        }
+    }
+
+    // la marge interne de 20px en haut et en bas
+    & .pd-y-20{
+        padding: {
+            top:2rem;
+            bottom: 2rem;
+        }
+    }
+
+
+    // la marge interne de 25px en haut et en bas
+    & .pd-y-25{
+        padding: {
+            top:2.5rem;
+            bottom: 2.5rem;
+        }
+    }
+
+
+    // la marge interne de 30px en haut et en bas
+    & .pd-y-30{
+        padding: {
+            top: 3rem;
+            bottom: 3rem;
+        }
+    }
+
+
+    // la marge interne de 5px à gauche et à droite
+    & .pd-x-5{
+        padding: {
+            left:.5rem;
+            right:.5rem;
+        }
+    }
+
+    // la marge interne de 10px à gauche et à droite
+    & .pd-x-10{
+        padding: {
+            left:1rem;
+            right: 1rem;
+        }
+    }
+
+    // la marge interne de 15px à gauche et à droite
+    & .pd-x-15{
+        padding: {
+            left:1.5rem;
+            right: 1.5rem;
+        }
+    }
+
+    // la marge interne de 20px à gauche et à droite
+    & .pd-x-20{
+        padding: {
+            left:2rem;
+            right: 2rem;
+        }
+    }
+
+    // la marge interne de 25px à gauche et à droite
+    & .pd-x-25{
+        padding: {
+            left:2.5rem;
+            right: 2.5rem;
+        }
+    }
+
+     // la marge interne de 25px à gauche et à droite
+     & .pd-x-30{
+        padding: {
+            left:3rem;
+            right:3rem;
+        }
+    }
+
+    // la marge interne de 5px à gauche
+    & .pd-lt-5{
+        padding-left:.5rem;
+    }
+
+
+    // la marge interne de 10px à gauche
+    & .pd-lt-10{
+        padding-left:1rem;
+    }
+
+    // la marge interne de 15px à gauche
+    & .pd-lt-15{
+        padding-left:1.5rem;
+    }
+
+    // la marge interne de 20px à gauche
+    & .pd-lt-20{
+        padding-left:2rem;
+    }
+
+    // la marge interne de 25px à gauche
+    & .pd-lt-25{
+        padding-left:2.5rem;
+    }
+
+
+    // la marge interne de 30px à gauche
+    & .pd-lt-30{
+        padding-left:3rem;
+    }
+
+    // la marge interne de 5px à droite
+    & .pd-rt-5{
+        padding-right:.5rem;
+    }
+
+    // la marge interne de 10px à droite
+    & .pd-rt-10{
+        padding-right:1rem;
+    }
+
+    // la marge interne de 15px à droite
+    & .pd-rt-15{
+        padding-right:1.5rem;
+    }
+
+    // la marge interne de 20px à droite
+    & .pd-rt-20{
+        padding-right:2rem;
+    }
+
+
+    // la marge interne de 25px à droite
+    & .pd-rt-25{
+        padding-right:2.5rem;
+    }
+
+    // la marge interne de 30px à droite
+    & .pd-rt-30{
+        padding-right:3rem;
+    }
+
+    // la marge interne de 5px en haut
+    & .pd-tp-5{
+        padding-top:.5rem;
+    }
+
+    // la marge interne de 10px en haut
+    & .pd-tp-10{
+        padding-top:1rem;
+    }
+
+    // la marge interne de 15px en haut
+    & .pd-tp-15{
+        padding-top:1.5rem;
+    }
+
+    // la marge interne de 20px en haut
+    & .pd-tp-20{
+        padding-top:2rem;
+    }
+
+    // la marge interne de 25px en haut
+    & .pd-tp-25{
+        padding-top:2.5rem;
+    }
+
+
+    // la marge interne de 30px en haut
+    & .pd-tp-30{
+        padding-top:3rem;
+    }
+
+    // la marge interne de 5px en bas
+    & .pd-bt-5{
+        padding-bottom:.5rem;
+    }
+
+
+    // la marge interne de 10px en bas
+    & .pd-bt-10{
+        padding-bottom:1rem;
+    }
+
+    // la marge interne de 15px en bas
+    & .pd-bt-15{
+        padding-bottom:1.5rem;
+    }
+
+    // la marge interne de 20px en bas
+    & .pd-bt-20{
+        padding-bottom:2rem;
+    }
+
+    // la marge interne de 25px en bas
+    & .pd-bt-25{
+        padding-bottom:2.5rem;
+    }
+
+    // la marge interne de 30px en bas
+    & .pd-bt-30{
+        padding-bottom:3rem;
+    }
+
+
+
+    // la marge interne de 5px en haut, en bas, en gauche, droite
+    & .mg-5{
+        margin: .5rem;
+    }
+
+    // la marge interne de 10px en haut, en bas, en gauche, droite
+    & .mg-10{
+        margin: 1rem;
+    }
+
+    // la marge interne de 15px en haut, en bas, en gauche, droite
+    & .mg-15{
+        margin: 1.5rem;
+    }
+
+    // la marge interne de 20px en haut, en bas, en gauche, droite
+    & .mg-20{
+        margin:2rem;
+    }
+
+
+    // la marge interne de 25px en haut, en bas, en gauche, droite
+    & .mg-25{
+        margin:2.5rem;
+    }
+
+     // la marge interne de 25px en haut, en bas, en gauche, droite
+     & .mg-30{
+        margin:3rem;
+    }
+
+
+     // la marge interne de 10px en haut et en bas
+     & .mg-y-5{
+        margin: {
+            top:.5rem;
+            bottom: .5rem;
+        }
+    }
+
+
+    // la marge interne de 10px en haut et en bas
+    & .mg-y-10{
+        margin: {
+            top:1rem;
+            bottom: 1rem;
+        }
+    }
+
+    // la marge interne de 15px en haut et en bas
+    & .mg-y-15{
+        margin: {
+            top:1.5rem;
+            bottom: 1.5rem;
+        }
+    }
+
+    // la marge interne de 20px en haut et en bas
+    & .mg-y-20{
+        margin: {
+            top:2rem;
+            bottom: 2rem;
+        }
+    }
+
+
+    // la marge interne de 25px en haut et en bas
+    & .mg-y-25{
+        margin: {
+            top:2.5rem;
+            bottom: 2.5rem;
+        }
+    }
+
+
+    // la marge interne de 30px en haut et en bas
+    & .mg-y-30{
+        margin: {
+            top: 3rem;
+            bottom: 3rem;
+        }
+    }
+
+
+    // la marge interne de 5px à gauche et à droite
+    & .mg-x-5{
+        margin: {
+            left:.5rem;
+            right:.5rem;
+        }
+    }
+
+    // la marge interne de 10px à gauche et à droite
+    & .mg-x-10{
+        margin: {
+            left:1rem;
+            right: 1rem;
+        }
+    }
+
+    // la marge interne de 15px à gauche et à droite
+    & .mg-x-15{
+        margin: {
+            left:1.5rem;
+            right: 1.5rem;
+        }
+    }
+
+    // la marge interne de 20px à gauche et à droite
+    & .mg-x-20{
+        margin: {
+            left:2rem;
+            right: 2rem;
+        }
+    }
+
+    // la marge interne de 25px à gauche et à droite
+    & .mg-x-25{
+        margin: {
+            left:2.5rem;
+            right: 2.5rem;
+        }
+    }
+
+     // la marge interne de 25px à gauche et à droite
+     & .mg-x-30{
+        margin: {
+            left:3rem;
+            right:3rem;
+        }
+    }
+
+    // la marge interne de 5px à gauche
+    & .mg-lt-5{
+        margin-left:.5rem;
+    }
+
+
+    // la marge interne de 10px à gauche
+    & .mg-lt-10{
+        margin-left:1rem;
+    }
+
+    // la marge interne de 15px à gauche
+    & .mg-lt-15{
+        margin-left:1.5rem;
+    }
+
+    // la marge interne de 20px à gauche
+    & .mg-lt-20{
+        margin-left:2rem;
+    }
+
+    // la marge interne de 25px à gauche
+    & .mg-lt-25{
+        margin-left:2.5rem;
+    }
+
+
+    // la marge interne de 30px à gauche
+    & .mg-lt-30{
+        margin-left:3rem;
+    }
+
+    // la marge interne de 5px à droite
+    & .mg-rt-5{
+        margin-right:.5rem;
+    }
+
+    // la marge interne de 10px à droite
+    & .mg-rt-10{
+        margin-right:1rem;
+    }
+
+    // la marge interne de 15px à droite
+    & .mg-rt-15{
+        margin-right:1.5rem;
+    }
+
+    // la marge interne de 20px à droite
+    & .mg-rt-20{
+        margin-right:2rem;
+    }
+
+
+    // la marge interne de 25px à droite
+    & .mg-rt-25{
+        margin-right:2.5rem;
+    }
+
+    // la marge interne de 30px à droite
+    & .mg-rt-30{
+        margin-right:3rem;
+    }
+
+    // la marge interne de 5px en haut
+    & .mg-tp-5{
+        margin-top:.5rem;
+    }
+
+    // la marge interne de 10px en haut
+    & .mg-tp-10{
+        margin-top:1rem;
+    }
+
+    // la marge interne de 15px en haut
+    & .mg-tp-15{
+        margin-top:1.5rem;
+    }
+
+    // la marge interne de 20px en haut
+    & .mg-tp-20{
+        margin-top:2rem;
+    }
+
+    // la marge interne de 25px en haut
+    & .mg-tp-25{
+        margin-top:2.5rem;
+    }
+
+
+    // la marge interne de 30px en haut
+    & .mg-tp-30{
+        margin-top:3rem;
+    }
+
+    // la marge interne de 5px en bas
+    & .mg-bt-5{
+        margin-bottom:.5rem;
+    }
+
+
+    // la marge interne de 10px en bas
+    & .mg-bt-10{
+        margin-bottom:1rem;
+    }
+
+    // la marge interne de 15px en bas
+    & .mg-bt-15{
+        margin-bottom:1.5rem;
+    }
+
+    // la marge interne de 20px en bas
+    & .mg-bt-20{
+        margin-bottom:2rem;
+    }
+
+    // la marge interne de 25px en bas
+    & .mg-bt-25{
+        margin-bottom:2.5rem;
+    }
+
+    // la marge interne de 30px en bas
+    & .mg-bt-30{
+        margin-bottom:3rem;
+    }
+
+
+
+
+
+}
+
+//input
+
+
+.--hide{
+    display:none;
+}
+

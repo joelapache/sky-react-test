@@ -1,0 +1,39 @@
+.searchbox{
+    position: relative;
+
+    &::before {
+        position: absolute;
+        content: "\f002"; //f002
+        left: 1.4rem;
+        top: 1.1rem;
+        font-size: 2rem;
+        color:#999;
+        border-right:.1rem solid #ddd;
+        padding-right: 1rem;
+    }
+    
+    & input{
+        display: inline-block;
+        width: 100%;
+        height:5.8rem;
+        padding:0 1rem 0 5rem;
+        font-size: 1.6rem;
+        border: .2rem solid #ddd;
+        outline: none;
+        border-radius: 1rem;
+        color:#777;
+        user-select: unset;
+        
+
+        &:hover {
+            border: .2rem solid #ccc;
+        }
+
+        &:focus {
+            border: .2rem solid $color_blue_normal_8;
+            color:#333;
+            
+
+        }
+    }
+}

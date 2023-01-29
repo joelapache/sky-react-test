@@ -1,0 +1,142 @@
+.static-popup-layout{
+    position: relative;
+    margin:0 auto 0 auto;
+    max-width: 86.8rem;
+    height:auto;
+    background: #fff;
+    box-shadow: 0 0 4rem 0 rgba(0, 0, 0, 0.5);
+    border-radius:1rem;
+    visibility: hidden;
+    z-index: 0;
+    opacity: 0;
+    transform: translateY(-4rem);
+    transition-duration: .1s;
+    transition-timing-function: ease-in-out;
+    transition-property:all;
+
+    &.show{
+        visibility: visible;
+        z-index: 15;
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+    & .icon{
+        color:$color_blue_normal;
+    }
+
+    &.success{
+        & .icon{
+            &::before{
+                content: "\f10d";
+                padding: 1rem 1rem;
+            }
+        }
+    }
+    &.back{
+        & .icon{
+            color:$color_red_normal ;
+            &::before{
+                content: "\f060";
+                padding: 1.2rem 1rem;
+            }
+        }
+    }
+    &.failed{
+        & .icon{
+            color:$color_red_normal ;
+            &::before{
+                content: "\f071";
+                padding: 1.2rem 1rem;
+            }
+        }
+    }
+    &.done{
+        & .icon{
+            &::before{
+                content: "\f00c";
+                padding: 1rem .8rem;
+            }
+        }
+    }
+    &.form{
+        & .icon{
+            &::before{
+                content: "\f0ea";
+                padding: 1rem .8rem;
+            }
+        }
+    }
+    &.update{
+        & .icon{
+            &::before{
+                content: "\f044";
+                padding: 1rem .8rem;
+            }
+        }
+    }
+    &.list{
+        & .icon{
+            &::before{
+                content: "\f0ca";
+                padding: 1rem .8rem;
+            }
+        }
+    }
+    &.print{
+        & .icon{
+            &::before{
+                content: "\f02f";
+                padding: 1rem .8rem;
+            }
+        }
+    }
+
+    & .header{
+        padding: 1rem 2rem ;
+        border-bottom: .1rem solid #ddd;
+
+        & .title{
+            font-size: 1.8rem;
+            font-weight: 600;
+            color:#555;
+        }
+
+        & .iconbox{
+            overflow: hidden;
+            width:3.5em;
+            height:3.5rem;
+            background: #eee;
+            border-radius: 50rem;
+            transition: all .2s linear;
+
+            & i{
+                font-size: 1.8rem;
+                font-style: normal;
+                &.fa-close{
+                    color: #444;
+                }
+            }
+
+            &:nth-child(3){
+                background: #eee;
+                &:hover{
+                    background: $color_blue_normal_2;
+                    & i{
+                        &.fa-close{
+                            color: $color_blue_normal;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    & .message{
+        background: #fff;
+        padding: 2rem;
+        overflow: auto;
+        border-radius:1rem;
+    }
+
+}

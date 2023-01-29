@@ -1,0 +1,180 @@
+.static-alert-popup{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-40%, -50%) scale(0);
+    margin:0 auto 2rem auto;
+    max-width: 40rem;
+    max-height:500rem;
+    background: #fff;
+    box-shadow: 0 1rem 4rem 0 rgba(0, 0, 0, 0.4);
+    border-radius:1rem;
+    visibility: hidden;
+    opacity: 0;
+    transition:all .2s ease-in;
+    // z-index: 0;
+
+    @media all and (max-width: 800px){
+        width: 45rem !important;
+    }
+
+    @media all and (max-width: 450px){
+        width: 90% !important;
+    }
+
+    &.show{
+        // z-index: 5;
+        visibility: visible;
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+    }
+
+    &.success{
+        & .icon{
+            color:$color_blue_normal;
+            &::before{
+                content: "\f10d";
+                padding: 1rem 1rem;
+            }
+        }
+    }
+    &.done{
+        & .icon{
+            color:green;
+            &::before{
+                content: "\f00c";
+                padding: 1rem .8rem;
+            }
+        }
+    }
+    &.back{
+        & .icon{
+            color:$color_red_normal ;
+            &::before{
+                content: "\f060";
+                padding: 1.2rem 1rem;
+            }
+        }
+    }
+    &.notice{
+        & .icon{
+            color:$color_blue_normal;
+            &::before{
+                content: "\f06a";
+                padding: 1rem .8rem;
+            }
+        }
+    }
+    &.warning{
+        & .icon{
+            color:$color_red_normal;
+            &::before{
+                content: "\f071";
+                padding: 1.2rem 1rem;
+            }
+        }
+    }
+    &.question{
+        & .icon{
+            color:$color_blue_normal;
+            &::before{
+                content: "\f059";
+                padding: 1rem .8rem;
+            }
+        }
+    }
+
+    // f05a  = info-cercle
+    // f059  = question-cercle
+
+
+    & .header{
+        padding: 1rem 2rem ;
+        border-bottom: .1rem solid #ddd;
+
+        & .title{
+            font-size: 1.8rem;
+            font-weight: 600;
+            color:#555;
+            text-overflow: ellipsis;
+            text-align: center;
+        }
+
+        & .iconbox{
+            overflow: hidden;
+            width:3.5em;
+            height:3.5rem;
+            background: #eee;
+            border-radius: 50rem;
+            transition: all .2s linear;
+
+            & i{
+                font-size: 1.8rem;
+                font-style: normal;
+
+                &.fa-close{
+                    color: #444;
+                }
+            }
+
+            &:nth-child(3){
+                background: #eee;
+                &:hover{
+                    background: $color_blue_normal_2;
+                    & i{
+                        &.fa-close{
+                            color: $color_blue_normal;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    & .popup-body{
+        padding:1rem 2rem 0 2rem;
+
+        & .popupp-message{
+            font-size:1.4rem;
+            text-align: center;
+            color:#333;
+        }
+
+        & .popup-btn{
+            padding:2rem 0 1.5rem 0;
+            cursor: pointer;
+
+            & .popup-btn_item{
+                border:none;
+                margin: 0 .5rem;
+                padding: .6rem 1.5rem;
+                background: #eee;
+                border-radius: .5rem;
+                font-size: 1.4rem;
+                font-weight: 600;
+                color:#333;
+                transition: all .2s linear;
+            }
+
+
+
+            & .cancel-btn{
+
+                &:hover{
+                    box-shadow:0 0 2rem 0 $color_red_normal_3;
+                    background: $color_red_normal_3;
+                    color: $color_red_normal;
+                }
+            }
+
+            & .confirm-btn{
+
+                &:hover{
+                    box-shadow:0 0 2rem 0 $color_blue_normal_3;
+                    background: $color_blue_normal_3;
+                    color: $color_blue_normal;
+                }
+            }
+        }
+    }
+}

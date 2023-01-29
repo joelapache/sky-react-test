@@ -1,0 +1,168 @@
+.dynamic-popup-menu {
+    background: #fff;
+    position: absolute;
+    border-radius: .8rem;
+    width: 26rem;
+    box-shadow: 0 .5rem 3rem 0 $color_blue_normal_6;
+    z-index: -1;
+    visibility: hidden;
+    opacity: 0;
+    max-height: 30rem;
+    overflow: hidden;
+    padding: 1rem;
+
+
+    // transform: translateY(-3rem);
+    // transition-property: transform;
+    // transition-duration: .4s;
+    // transition-timing-function: ease-out;
+
+    &.show {
+        visibility: visible;
+        opacity: 1;
+        z-index: 100;
+        // transform: translateY(0);
+
+        @media all and (max-width: 450px) {
+            width: 80% !important;
+            position: fixed !important;
+            top: 50% !important;
+            left: 50% !important;
+            transform: translate(-50%, -50%) !important;
+            max-height: 50rem !important;
+        }
+    }
+
+    & #mCSB_2_scrollbar_vertical {
+        visibility: visible !important;
+    }
+
+    &.lockscrollbar {
+        & #mCSB_2_scrollbar_vertical {
+            visibility: hidden !important;
+        }
+    }
+
+    & .container {
+        position: relative;
+        padding: 0;
+
+        & .list-menu {
+            padding: 0;
+
+
+            & .list-item {
+
+                & .list-link {
+                    position: relative;
+                    display: inline-block;
+                    padding: .8rem 1rem .8rem 5rem;
+                    font-size: 1.5rem;
+                    transition: all .2s linear;
+                    width: 100%;
+                    border-radius: 1rem;
+                    margin: .4rem 0;
+
+
+                    & .fa {
+                        position: absolute;
+                        font-size: 1.8rem;
+                        top: 1.3rem;
+                        left: 1.5rem;
+                        color: $color_blue_light;
+                        transition: all .2s linear;
+                        z-index: 2;
+                    }
+
+                    & .label {
+                        position: relative;
+                        color: #444;
+                        transition: all .2s linear;
+                        z-index: 2;
+
+                        & .lang-label {
+                            padding: 0 .8rem;
+                            margin-top: -.6rem;
+
+                            &:nth-child(1) {
+                                padding-left: 0;
+                            }
+                        }
+
+                        & .switchbox {
+                            margin-top: .1rem;
+                        }
+                    }
+
+                    &::before {
+                        position: absolute;
+                        content: "";
+                        top: 0;
+                        left: 0;
+                        width: 0%;
+                        height: 100%;
+                        z-index: 1;
+                        background: $color_blue_light;
+                        border-radius: 1rem;
+                        transition: all .4s cubic-bezier(1, 2, 0, 0);
+                    }
+
+
+
+
+                    &:not(.none):hover {
+                        background: $color_blue_normal_2;
+
+                        & .fa {
+                            color: #fff;
+                        }
+
+                        & .label {
+                            color: #fff;
+                        }
+
+                        &::before {
+                            width: 100%;
+                            background: $color_blue_light;
+                            border-radius: 1rem;
+                        }
+                    }
+
+                    &.list-link-red{
+                        &:hover{
+                            &::before {
+                                width: 100%;
+                                background: $color_red_dark;
+                                border-radius: 1rem;
+                            }
+                        }
+                    }
+
+
+                    &.list-link-green{
+                        &:hover{
+                            &::before {
+                                width: 100%;
+                                background: green ;
+                                border-radius: 1rem;
+                            }
+                        }
+                    }
+
+                }
+            }
+        }
+    }
+
+
+    &:hover {
+        overflow: auto;
+        padding-right: 1.5rem;
+
+        &.lockscrollbar {
+            & #mCSB_2_scrollbar_vertical {
+                padding-right: 0 !important;
+            }
+        }
+    }
+}

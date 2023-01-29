@@ -1,0 +1,185 @@
+.list-container {
+
+    .block-title {
+        font-size: 1.6rem;
+        color: #444;
+        font-weight: 600;
+        padding: 2rem 1rem 0rem 1rem;
+    }
+
+    & .global-form-layout {
+
+        & .global-main-form {
+
+            @media all and (max-width: 868px) {
+                display: grid;
+                grid-template-columns: 1fr;
+            }
+
+            & .info-profile {
+                max-width: 40rem;
+                border-right: .1rem solid #ccc;
+
+                @media all and (max-width: 868px) {
+                    border-right: 0;
+                    border-bottom: .1rem solid #ccc;
+                    max-width: 90rem;
+
+                    display: grid;
+                    grid-template-columns: repeat(2, 1fr);
+                    grid-gap: 1rem;
+                    @media all and (max-width: 568px) {
+                        grid-template-columns: repeat(1, 1fr);
+                    }
+                }
+
+                & .block-title{
+                    @media all and (max-width: 868px) {
+                        grid-column: 1/1;
+                        grid-row: 1;
+                    }
+                }
+
+
+                &--icon {
+                    position: relative;
+                    padding: 0 2rem 1rem 2rem;
+                    font-size: 1.6rem;
+                    text-align: center;
+                    width: 100%;
+
+                    @media all and (max-width: 868px) {
+                        grid-column: 1/1;
+                        grid-row: 2;
+                    }
+
+                    & img {
+                        width: 4.5cm;
+                        height: 5.5cm;
+                        border: .5rem solid #ccc;
+                        border-radius: .5rem;
+                    }
+
+                    & .upload-btn {
+                        width: 4.5cm;
+                        padding: .8rem 0;
+                        text-align: center;
+                        font-size: 1.4rem;
+                        background: $color_blue_normal;
+                        margin: 1rem auto;
+                        color: #fff;
+                        font-weight: 600;
+                        border-radius: .3rem;
+                        cursor: pointer;
+                        transition: all .2s linear;
+                        @media all and (max-width: 568px) {
+                            margin: 1rem auto 0 auto;
+                        }
+                    }
+
+                    & input {
+                        position: absolute;
+                        margin-top: 21.8rem;
+                        margin-left: -17.05rem;
+                        width: 4.51cm;
+                        height: 4rem;
+                        padding: .8rem 0;
+                        border-radius: .3rem;
+                        opacity: 0;
+
+                        &:hover~.upload-btn {
+                            background: $color_blue_dark;
+                        }
+                    }
+                }
+
+                & .icon-profile-description {
+                    padding: 1rem;
+                    @media all and (max-width: 868px) {
+                        grid-column: 2/2;
+                        grid-row: auto / span 2;
+                    }
+
+                    @media all and (max-width: 568px) {
+                        grid-column: 1;
+                        grid-row: 3;
+                    }
+
+                    & span {
+                        font-size: 1.6rem;
+
+                        &:first-child {
+                            padding-top: 2rem;
+                            @media all and (max-width: 568px) {
+                                padding-top:0;
+                            }
+                            color: #000;
+                        }
+                    }
+                }
+            }
+
+            & .basic-info {
+                position: relative;
+                padding: 0 2rem;
+                @media all and (max-width: 600px) {
+                    padding: 0;
+                }
+                @media all and (max-width: 868px) {
+                    border-left:0 !important;
+                }
+
+                & .flex-layout {
+                    position: relative;
+                    padding: 0 1rem;
+                    display: grid;
+                    grid-template-columns: 1fr 1fr;
+                    grid-gap: 0 2rem;
+                    @media all and (max-width: 600px) {
+                        padding: 0;
+                    }
+                    @media all and (max-width: 568px) {
+                        grid-template-columns: 1fr;
+                    }
+                    &.--once {
+                        grid-template-columns: 1fr !important;
+                    }
+                }
+
+                & .buttonbox{
+                    & .buttonbox--btn{
+                        @media all and (max-width: 568px) {
+                            width: 100%;
+                            text-align: center;
+                            margin-right: 0;
+                        }
+                    }
+                }
+
+
+                & .block-title{
+
+                    @media all and (max-width: 450px) {
+                        display: grid;
+                        grid-template-columns: 1fr;
+                    }
+
+
+                    & span{
+                        &:nth-child(2){
+                            text-align: right;
+                            @media all and (max-width: 450px) {
+                                text-align: left;
+                            }
+                        }
+
+                        @media all and (max-width: 568px) {
+                            font-size: 1.2rem !important;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+}

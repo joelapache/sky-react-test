@@ -1,0 +1,22 @@
+.dashboard-layout--chart{
+    margin: 1rem 0 2rem 0;
+
+    & .chart-area{
+        background: #fff;
+        padding:2rem;
+        height:40rem;
+        border-radius: 1rem;
+        box-shadow: 0 0rem 2rem 0 $color_blue_normal_2;
+    }
+
+    & .chart-arc{
+        margin-left: 2rem;
+        border-radius: 1rem;
+        background: #fff;
+        box-shadow: 0 0rem 2rem 0 $color_blue_normal_2;
+        padding:2rem;
+        & .chart-arc-circle{
+            
+        }
+    }
+}

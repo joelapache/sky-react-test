@@ -1,0 +1,104 @@
+.dashboard-layout--first{
+    padding: 1rem 0;
+
+    & .box{
+        position: relative;
+        background-color:#fff;
+        border-radius: 1rem;
+        margin: 1rem;
+        transition: all .2s linear;
+        box-shadow: 0 0rem 2rem 0 $color_blue_normal_2;
+
+        
+        &::after{
+            position: absolute;
+            content: "";
+            right: 0;
+            top: 15%;
+            width:.8rem;
+            height: 70%;
+            background: $color_blue_normal;
+            background: linear-gradient(to left, $color_blue_light, $color_blue_normal) ;
+            border-radius:1rem  0rem 0rem  1rem ;
+        }
+
+        &::before{
+            position: absolute;
+            content: "";
+            left: 0;
+            top: 0;
+            width:10rem;
+            height: 100%;
+            background: $color_blue_normal;
+            background-image: linear-gradient(to left, $color_blue_light, $color_blue_normal) ;
+            border-radius: 1rem;
+            transition: all .3s cubic-bezier(1, 2, 0, 0);
+        }
+
+        & .image{
+            border-radius: 1rem;
+            padding:3rem 2rem;
+            // background: $color_blue_normal;
+            // background: linear-gradient(to left, $color_blue_light, $color_blue_normal) ;
+            
+            & .fa,
+            & a{
+                text-align: center;
+                z-index: 1;
+                color:rgba(255, 255, 255, 0.8);
+            }
+
+            & .fa{
+                font-size: 4rem;
+            }
+        }
+
+        & .detail{
+            position: relative;
+            text-align: center;
+            font-size: 1.6rem;
+
+            & span{
+
+                &.number{
+                    font-weight: 800;
+                    font-size: 2rem;
+                    color: $color_blue_normal;
+                }
+                &.label{
+
+                }
+            }
+        }
+
+
+        &:hover{
+            box-shadow: 0 0rem 2rem 0 $color_blue_normal_2;
+
+            &::before{
+                width: 100%;
+            }
+
+            &::after{
+                background: #fff;
+            }
+
+            & .detail{
+    
+                & span{
+    
+                    &.number{
+                        font-weight: 800;
+                        font-size: 2rem;
+                        color:rgba(255, 255, 255, 0.8);
+                    }
+                    &.label{
+                        color:rgba(255, 255, 255, 0.8);
+                    }
+                }
+            }
+        }
+
+      
+    }
+}

@@ -1,0 +1,122 @@
+.header-layout{
+    position: fixed;
+    background: #fff;
+    box-shadow: 0 1rem 2rem 0 rgba(0, 0, 0, 0.09);
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1;
+    // border-bottom:.2rem solid rgba(0, 0, 0, 0.6);
+
+    & .container{
+        position: relative;
+        align-items: center !important;
+
+        & .navbar-btn{
+            padding-right: 2rem;
+
+            & .fa{
+                font-size: 3rem;
+                color: $color_blue_dark;
+                display: none;
+                border: .2rem solid $color_blue_dark;
+                padding: .5rem 1rem;
+                border-radius: .8rem;
+
+                @media all and (max-width: 1200px) {
+                    display: block;
+                }
+            }
+        }
+
+        & .image{
+            @media all and (max-width: 1200px) {
+                padding: 2.6rem 2rem;
+            }
+
+            & .site-icon{
+                width: 5rem;
+            }
+        }
+
+        & .navbar-component{
+            position: relative;
+           
+            @media all and (max-width: 1200px) {
+                position: absolute;
+                flex-direction: column;
+                top: 7.8rem;
+                left: 0;
+                background: #fff;
+                width: 100%;
+                z-index: 1;
+                box-shadow: 0 1rem 2rem 0 rgba(0, 0, 0, 0.09);
+                padding: 2rem;
+                visibility: hidden;
+                opacity: 0;
+                height:0;
+                overflow: hidden;
+                border-top: .1rem solid #ddd;
+                transition: all .2s ease-out;
+            }
+
+            @media all and (max-width: 450px) {
+                position: fixed;
+                height: 100vh !important;
+            }
+
+            &.show{
+                visibility: visible;
+                opacity: 1;
+                height: auto;
+            }
+           
+
+            &--link {
+                display: inline-block;
+                font-size: 1.8rem;
+                padding: 2.5rem 2rem;
+                border-bottom: .3rem solid #fff;
+                transition: all .1s linear;
+                font-weight: 600;
+                color: $color_blue_dark;
+
+                @media all and (max-width: 1200px) {
+                    text-align: center;
+                    border: none;
+                    border-radius: 1rem;
+                    padding: 1rem 2rem;
+                    margin: .5rem 0;
+                    font-size: 2rem;
+                    width: 100%;
+                }
+
+                &:hover{
+                    color: $color_blue_normal;
+                    border-bottom: .3rem solid #eee;
+
+                    @media all and (max-width: 1200px) {
+                        background: #eee;
+                        border: none;
+                    }
+                }
+        
+                &.active {
+                    color: $color_blue_dark;
+                    border-bottom: .3rem solid $color_blue_dark;
+                    font-weight: bold;
+
+                    @media all and (max-width: 1200px) {
+                        background: $color_blue_normal_1;
+                        font-weight: bold;
+                        border: none;
+                    }
+                }
+            }
+        }
+    }
+    
+
+    
+    
+}
